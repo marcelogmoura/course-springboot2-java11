@@ -5,7 +5,6 @@ import java.util.Objects;
 
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import com.educandoweb.course.entities.Order;
@@ -13,9 +12,8 @@ import com.educandoweb.course.entities.Product;
 
 @Embeddable
 public class OrderItemPK implements Serializable{
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;
@@ -52,6 +50,7 @@ public class OrderItemPK implements Serializable{
 		OrderItemPK other = (OrderItemPK) obj;
 		return Objects.equals(order, other.order) && Objects.equals(product, other.product);
 	}
+	
 	
 	
 
